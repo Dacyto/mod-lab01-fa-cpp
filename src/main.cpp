@@ -3,7 +3,7 @@
 #include <iostream>
 
 int main() {
-    
+    using std::cout;
     const char* str = "Back to the 1980s Retrowave";
     unsigned int result1 = faStr1(str);
     unsigned int result2 = faStr2(str);
