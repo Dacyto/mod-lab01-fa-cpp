@@ -4,20 +4,20 @@
 unsigned int faStr1(const char *str) {
 int i = 0;
 int count = 0;
-bool numb = true;
+bool numb = false;
 bool inWord = false;
 while (str[i]) {
         if (str[i] != ' ') {
             inWord = true;
-            if (inWord == true && numb == true && isdigit(str[i]) == 0)
-               numb = false;
-        } else if (str[i] == ' ' && inWord == true && numb == false) {
+            if (inWord == true && numb == false && isdigit(str[i]))
+               numb = true;
+        } else if (str[i] == ' ' && inWord == true && numb == true) {
         count++;
         inWord = false;
-        numb = true;
+        numb = false;
         } else if (str[i] == ' ' && inWord == true) {
         inWord = false;
-        numb = true;
+        numb = false;
         }
     i++;
 }
