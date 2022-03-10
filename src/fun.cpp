@@ -5,7 +5,7 @@ unsigned int faStr1(const char *str) {
 int i = 0;
 int count = 0;
 bool numb = false;
-bool inWord = false;  
+bool inWord = false;
 while (str[i]) {
         if (str[i] != ' ' && inWord == false) {
             inWord = true;
@@ -18,8 +18,8 @@ while (str[i]) {
         } else if (str[i] == ' ' && inWord == true) {
         inWord = false;
         numb = false;
-        }    
-    i++;    
+        }
+    i++;
 }
     return count;
 }
