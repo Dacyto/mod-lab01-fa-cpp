@@ -56,5 +56,21 @@ return count;
 }
 
 unsigned int faStr3(const char *str) {
-    return 0;
+    int i = 0;
+    int str_chars = 0;
+    int av_length = 0;
+    int WordAm = 0; // words Amount
+    bool inWord = false;
+    while (str[i]) {
+            if (inWord == false && str[i] != ' ') {
+              WordAm++;
+              inWord = true;
+            } else if (inWord == true && str[i] == ' ')
+              inWord = false;
+            if (str[i] != ' ')
+              str_chars++;
+  i++;
+    }
+    av_lenght = round(str_chars/WordAm);
+    return av_lenght;
 }
