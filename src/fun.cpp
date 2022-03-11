@@ -65,12 +65,13 @@ unsigned int faStr3(const char *str) {
             if (inWord == false && str[i] != ' ') {
               WordAm++;
               inWord = true;
-            } else if (inWord == true && str[i] == ' ')
+            } else if (inWord == true && str[i] == ' ') {
               inWord = false;
-            if (str[i] != ' ')
+            } if (str[i] != ' ') {
               str_chars++;
+            }
   i++;
     }
-    av_lenght = round(str_chars/WordAm);
-    return av_lenght;
+    av_length = round(str_chars/WordAm);
+    return av_length;
 }
