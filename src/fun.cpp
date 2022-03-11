@@ -27,28 +27,29 @@ while (str[i]) {
 unsigned int faStr2(const char *str) {
     int i = 0;
     int count = 0;
-    bool inWord = false;
-    bool Zaglav_char = false;
-    bool eng_lowercase_char = false;
+    bool inW = false; // inWord
+    bool Zg_ch = false; // Zaglav_char
+    bool enlow = false; // eng_lowercase_char
     while (str[i]) {
         if (str[i] != ' ') {
-            inWord = true;
-            if (inWord == true && Zaglav_char == false && eng_lowercase_char == false && str[i] >= 'A' && str[i] <= 'Z')
-               Zaglav_char = true;
-            if (inWord == true && Zaglav_char == true && str[i] >= 'a' && str[i] <= 'z')
-               eng_lowercase_char = true;
-        } else if (str[i] == ' ' && inWord == true && Zaglav_char == true && eng_lowercase_char == true) {
+            inW = true;
+         if (inW == true && Zg_ch == false && enlow == false && str[i] >= 'A' && str[i] <= 'Z')
+               Zg_ch = true;
+            if (inW == true && Zg_ch == true && str[i] >= 'a' && str[i] <= 'z')
+               enlow = true;
+            else enlow = false;
+        } else if (str[i] == ' ' && inW == true && Zg_ch == true && enlow == true) {
         count++;
-        inWord = false;
-        Zaglav_char = false;
-        eng_lowercase_char = false;
-        } else if (str[i] == ' ' && inWord == true) {
-        inWord = false;
-        Zaglav_char = false;
-        eng_lowercase_char = false;
-        }
-   i++;
+        inW = false;
+        Zg_ch = false;
+        enlow = false;
+        } else if (str[i] == ' ' && inW == true) {
+        inW = false;
+        Zg_ch = false;
+        enlow = false;
  }
+i++;
+}
    return count;
 }
 
