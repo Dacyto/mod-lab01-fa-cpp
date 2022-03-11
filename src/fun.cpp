@@ -11,11 +11,11 @@ while (str[i]) {
             inWord = true;
             if (inWord == true && numb == false && isdigit(str[i]))
                numb = true;
-        } else if (str[i] == ' ' && inWord == true && numb == true) {
+        } else if (str[i] == ' ' && inWord == true && numb == false) {
         count++;
         inWord = false;
         numb = false;
-        } else if (str[i] == ' ' && inWord == true) {
+        } else if (str[i] == ' ' && inWord == true && numb == true) {
         inWord = false;
         numb = false;
         }
