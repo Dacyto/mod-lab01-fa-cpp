@@ -67,7 +67,7 @@ unsigned int faStr3(const char *str) {
               inWord = true;
             } else if (inWord == true && str[i] == ' ') {
               inWord = false;
-            } 
+            }
             if (str[i] != ' ')
               str_chars++;
   i++;
