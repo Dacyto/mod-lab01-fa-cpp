@@ -34,7 +34,7 @@ unsigned int faStr2(const char *str) {
   if (str[i] != ' ') {
     inW = true;
   if (inW == true && Zg_ch == false && enlow == false)
-    if (str[i] >= 'A' && str[i] <= 'Z')        
+    if (str[i] >= 'A' && str[i] <= 'Z')
      Zg_ch = true;
   if (inW == true && Zg_ch == true && str[i] >= 'a' && str[i] <= 'z')
      enlow = true;
