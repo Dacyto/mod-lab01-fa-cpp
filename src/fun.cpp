@@ -31,14 +31,15 @@ unsigned int faStr2(const char *str) {
     bool Zg_ch = false; // Zaglav_char
     bool enlow = false; // eng_lowercase_char
     while (str[i]) {
-        if (str[i] != ' ') {
-            inW = true;
-         if (inW == true && Zg_ch == false && enlow == false && str[i] >= 'A' && str[i] <= 'Z')
-               Zg_ch = true;
-            if (inW == true && Zg_ch == true && str[i] >= 'a' && str[i] <= 'z')
-               enlow = true;
-            else enlow = false;
-        } else if (str[i] == ' ' && inW == true && Zg_ch == true && enlow == true) {
+ if (str[i] != ' ') {
+    inW = true;
+  if (inW == true && Zg_ch == false && enlow == false && str[i] >= 'A' && str[i] <= 'Z')
+     Zg_ch = true;
+  if (inW == true && Zg_ch == true && str[i] >= 'a' && str[i] <= 'z')
+     enlow = true;
+  if (inW == true && Zg_ch == true && isalpha(str[i]) == 0)
+     enlow = false;
+ } else if (str[i] == ' ' && inW == true && Zg_ch == true && enlow == true) {
         count++;
         inW = false;
         Zg_ch = false;
@@ -47,10 +48,10 @@ unsigned int faStr2(const char *str) {
         inW = false;
         Zg_ch = false;
         enlow = false;
- }
+}
 i++;
 }
-   return count;
+return count;
 }
 
 unsigned int faStr3(const char *str) {
